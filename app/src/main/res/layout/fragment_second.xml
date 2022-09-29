@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--I need scrolling -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbarStyle="outsideOverlay"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="parent">
+
+         <!--Constraints are effective for managing space -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A6907A"
+        tools:context=".SecondFragment">
+
+        <!--Everything in here uses the constraint layout, these are all the images and textboxes I need-->
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="80dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/desc"
+            android:scaleX="-1"
+            android:src="@drawable/transpizza"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/desc"
+            android:src="@drawable/transpizza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/calculator"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/istok_web_bold"
+            android:text="@string/calc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/honeyField" />
+
+        <Button
+            android:id="@+id/mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/palanquin_dark"
+            android:text="@string/mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/gramlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/g"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/wOtf"
+            app:layout_constraintTop_toBottomOf="@+id/mode" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="28sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tflbl"
+            android:layout_width="119dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="2dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/tf"
+            app:layout_constraintEnd_toStartOf="@+id/wOtf"
+            app:layout_constraintTop_toBottomOf="@+id/mode" />
+
+        <TextView
+            android:id="@+id/measureTO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/diam"
+            android:fontFamily="@font/quicksand_medium"
+            app:layout_constraintEnd_toStartOf="@+id/measureTT"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/doughBs"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <TextView
+            android:id="@+id/measureTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/width"
+            android:fontFamily="@font/quicksand_medium"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/measureTwo"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <TextView
+            android:id="@+id/doughB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/dou"
+            android:fontFamily="@font/quicksand_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <RadioGroup
+            android:id="@+id/shapeGroup"
+            android:layout_width="139dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <RadioButton
+                android:id="@+id/roundButton"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/ci" />
+
+            <RadioButton
+                android:id="@+id/rectButton"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/re" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/outputBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="#FFFFFF"
+            android:paddingLeft="8dp"
+            android:paddingTop="2dp"
+            android:paddingRight="8dp"
+            android:text="@string/ing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:fontFamily="@font/quicksand_medium"
+            android:textIsSelectable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculator" />
+
+        <TextView
+            android:id="@+id/ignoreMe"
+            android:layout_width="332dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outputBox" />
+
+        <TextView
+            android:id="@+id/waterlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/h2o"
+            android:fontFamily="@font/quicksand_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/doughB" />
+
+        <TextView
+            android:id="@+id/oillbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/oil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <TextView
+            android:id="@+id/yeastlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/rise"
+            app:layout_constraintEnd_toStartOf="@+id/saltlbl"
+            app:layout_constraintHorizontal_bias="0.19"
+            app:layout_constraintStart_toEndOf="@+id/percent3"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <EditText
+            android:id="@+id/extra"
+            android:layout_width="20dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/comp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="1"
+            android:paddingLeft="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/percent2"
+            app:layout_constraintTop_toBottomOf="@+id/doughB" />
+
+        <TextView
+            android:id="@+id/extralbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="18dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/comp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/percent2"
+            app:layout_constraintTop_toBottomOf="@+id/doughB" />
+
+        <TextView
+            android:id="@+id/percent1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="48dp"
+            android:text="@string/per"
+            app:layout_constraintBottom_toBottomOf="@+id/waterlbl"
+            app:layout_constraintStart_toEndOf="@+id/waterlbl" />
+
+        <TextView
+            android:id="@+id/percent2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="2dp"
+            android:text="@string/per"
+            app:layout_constraintBottom_toBottomOf="@+id/waterlbl"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/percent4"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/per"
+            app:layout_constraintStart_toEndOf="@+id/yeastField"
+            app:layout_constraintTop_toBottomOf="@+id/extralbl" />
+
+        <TextView
+            android:id="@+id/percent3"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/per"
+            app:layout_constraintStart_toEndOf="@+id/oilField"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <TextView
+            android:id="@+id/saltlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/sel"
+            app:layout_constraintEnd_toStartOf="@+id/saltField"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <TextView
+            android:id="@+id/percent5"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/per"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <TextView
+            android:id="@+id/honeylbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/hon"
+            android:fontFamily="@font/quicksand_medium"
+            app:layout_constraintEnd_toStartOf="@+id/otherlbl"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/percent6"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <TextView
+            android:id="@+id/sugarlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:layout_marginTop="24dp"
+            android:text="@string/sug"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <TextView
+            android:id="@+id/otherlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/o"
+            app:layout_constraintEnd_toStartOf="@+id/otherField"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <TextView
+            android:id="@+id/percent7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/per"
+            app:layout_constraintStart_toEndOf="@+id/honeyField"
+            app:layout_constraintTop_toBottomOf="@+id/oilField" />
+
+        <TextView
+            android:id="@+id/percent8"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/per"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oilField" />
+
+        <TextView
+            android:id="@+id/percent6"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/per"
+            app:layout_constraintStart_toEndOf="@+id/sugarField"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <EditText
+            android:id="@+id/wOtf"
+            android:layout_width="80dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="2dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/startF"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mode" />
+
+        <EditText
+            android:id="@+id/doughBs"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/doughB"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <EditText
+            android:id="@+id/measureOne"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            app:layout_constraintStart_toEndOf="@+id/measureTO"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <EditText
+            android:id="@+id/measureTwo"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tflbl" />
+
+        <EditText
+            android:id="@+id/waterField"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/h2o"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:text="@string/empty"
+            app:layout_constraintStart_toEndOf="@+id/waterlbl"
+            app:layout_constraintTop_toBottomOf="@+id/doughB"
+            tools:text="@string/empty" />
+
+        <EditText
+            android:id="@+id/oilField"
+            android:layout_width="45dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/h2o"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:paddingLeft="6dp"
+            app:layout_constraintStart_toEndOf="@+id/oillbl"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <EditText
+            android:id="@+id/yeastField"
+            android:layout_width="45dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/h2o"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:paddingLeft="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/saltlbl"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/yeastlbl"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <EditText
+            android:id="@+id/saltField"
+            android:layout_width="45dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:paddingLeft="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/percent5"
+            app:layout_constraintTop_toBottomOf="@+id/waterlbl" />
+
+        <EditText
+            android:id="@+id/sugarField"
+            android:layout_width="45dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:paddingLeft="6dp"
+            app:layout_constraintStart_toEndOf="@+id/sugarlbl"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <EditText
+            android:id="@+id/honeyField"
+            android:layout_width="45dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:paddingLeft="6dp"
+            app:layout_constraintStart_toEndOf="@+id/honeylbl"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+        <EditText
+            android:id="@+id/otherField"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            app:layout_constraintEnd_toStartOf="@+id/percent8"
+            app:layout_constraintTop_toBottomOf="@+id/oillbl" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

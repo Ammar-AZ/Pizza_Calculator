@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Pizza Calculator</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Go</string>
+    <string name="title">Pizza Calculator</string>
+    <string name="inst">Welcome to Pizza Calculator. Indicate the shape of the pizza you want and whether to calculate it by weight or thickness factor, then input all the ingredients in baker\'s ratios. Once finished, press calculate for a list of all ingredients, how much is required, and if applicable, volume measurements. Dimensions are measured in inches.</string>
+
+    <!-- Strings used for fragments for textviews and other relevant -->
+    <string name="diam">Diameter:</string>
+    <string name="length">Length:</string>
+    <string name="width">Width:</string>
+    <string name="calc">Calculate</string>
+    <string name="mode">Calculation Mode</string>
+    <string name="re">Rectangular</string>
+    <string name="ci">Circular</string>
+    <string name="desc">Pixel art of a slice of pizza</string>
+    <string name="dou">Doughballs:</string>
+    <string name="hello_first_fragment">Instructions</string>
+    <string name="tf">Thickness Factor:</string>
+    <string name="g">grams</string>
+    <string name="per">%</string>
+    <string name="h2o">Hydration:</string>
+    <string name="oil">Oil:</string>
+    <string name="sel">Salt:</string>
+    <string name="sug">Sugar:</string>
+    <string name="hon">Honey:</string>
+    <string name="rise">Yeast:</string>
+    <string name="o">Other:</string>
+    <string name="startF">0.</string>
+    <string name="comp">Bowl Residue Compensation:</string>
+    <string name="ing">Dough Ingredients:\n\n</string>
+    <string name="empty"> </string>
+
+
+
+</resources>

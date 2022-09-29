@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/anonymous_pro_bold</item>
+        <item>@font/audiowide</item>
+        <item>@font/average_sans</item>
+        <item>@font/carter_one</item>
+        <item>@font/contrail_one</item>
+        <item>@font/dhurjati</item>
+        <item>@font/istok_web_bold</item>
+        <item>@font/palanquin_dark</item>
+        <item>@font/quicksand_bold</item>
+        <item>@font/quicksand_medium</item>
+        <item>@font/stoke</item>
+    </array>
+</resources>
